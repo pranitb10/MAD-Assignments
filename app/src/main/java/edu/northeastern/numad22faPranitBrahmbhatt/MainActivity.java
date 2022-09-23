@@ -1,7 +1,11 @@
 package edu.northeastern.numad22faPranitBrahmbhatt;
 
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,8 +34,13 @@ public class MainActivity extends AppCompatActivity {
         clickMeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText( getApplicationContext(), R.string.my_info, Toast.LENGTH_LONG).show();
+                openClickyClickyScreen();
             }
         });
+    }
+
+    public void openClickyClickyScreen(){
+        Intent openClickyActivity = new Intent(this, ClickyClickyScreen.class);
+        startActivity(openClickyActivity);
     }
 }

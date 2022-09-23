@@ -15,8 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.927"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.927"/>
 
     <Button
         android:id="@+id/about_me_button"
@@ -28,8 +27,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.948" />
 
     <Button
         android:id="@+id/click_me_button"
@@ -40,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.539"
+        app:layout_constraintVertical_bias="0.592"
         tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.Guideline
