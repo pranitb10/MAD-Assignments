@@ -18,7 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
         Button aboutMeButton = (Button)findViewById(R.id.about_me_button);
 
+        Button clickMeButton = (Button)findViewById(R.id.click_me_button);
+
         aboutMeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText( getApplicationContext(), R.string.my_info, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        clickMeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText( getApplicationContext(), R.string.my_info, Toast.LENGTH_LONG).show();
