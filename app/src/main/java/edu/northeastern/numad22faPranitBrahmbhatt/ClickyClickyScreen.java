@@ -3,8 +3,10 @@ package edu.northeastern.numad22faPranitBrahmbhatt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class ClickyClickyScreen extends AppCompatActivity {
+public class ClickyClickyScreen extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -3,4 +3,17 @@
     <string name="about_me">About Me</string>
     <string name="click_me">Clicky Clicky</string>
     <string name="my_info">Name: Pranit Brahmbhatt\nEmail: brahmbhatt.pr@northeastern.edu</string>
+    <string name="A">A</string>
+    <string name="B">B</string>
+    <string name="C">C</string>
+    <string name="D">D</string>
+    <string name="E">E</string>
+    <string name="F">F</string>
+    <string name="Pressed">Pressed:-</string>
+    <string name="PressedA">Pressed:- A</string>
+    <string name="PressedB">Pressed:- B</string>
+    <string name="PressedC">Pressed:- C</string>
+    <string name="PressedD">Pressed:- D</string>
+    <string name="PressedE">Pressed:- E</string>
+    <string name="PressedF">Pressed:- F</string>
 </resources>
