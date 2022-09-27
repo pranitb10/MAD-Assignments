@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.972" />
+        app:layout_constraintVertical_bias="0.932" />
 
     <Button
         android:id="@+id/about_me_button"
@@ -40,6 +40,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.567"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/link_collector_button"
+        android:layout_width="182dp"
+        android:layout_height="46dp"
+        android:text="@string/link_collector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.694" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
