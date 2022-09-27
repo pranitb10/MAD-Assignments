@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         aboutMeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText( getApplicationContext(), R.string.my_info, Toast.LENGTH_LONG).show();
+                openAboutMeScreen();
             }
         });
 
@@ -42,5 +42,10 @@ public class MainActivity extends AppCompatActivity {
     public void openClickyClickyScreen(){
         Intent openClickyActivity = new Intent(this, ClickyClickyScreen.class);
         startActivity(openClickyActivity);
+    }
+
+    public void openAboutMeScreen(){
+        Intent openAboutMeActivity = new Intent(this, AboutMeScreen.class);
+        startActivity(openAboutMeActivity);
     }
 }
