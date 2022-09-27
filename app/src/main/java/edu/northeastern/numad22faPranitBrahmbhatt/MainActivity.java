@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button clickMeButton = (Button)findViewById(R.id.click_me_button);
 
+        Button linkCollectorButton = (Button)findViewById(R.id.link_collector_button);
+
         aboutMeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
                 openClickyClickyScreen();
             }
         });
+
+        linkCollectorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLinkCollectorScreen();
+            }
+        });
     }
 
     public void openClickyClickyScreen(){
@@ -47,5 +56,10 @@ public class MainActivity extends AppCompatActivity {
     public void openAboutMeScreen(){
         Intent openAboutMeActivity = new Intent(this, AboutMeScreen.class);
         startActivity(openAboutMeActivity);
+    }
+
+    public void openLinkCollectorScreen(){
+        Intent openLinkCollectorActivity = new Intent(this, LinkCollectorScreen.class);
+        startActivity(openLinkCollectorActivity);
     }
 }
