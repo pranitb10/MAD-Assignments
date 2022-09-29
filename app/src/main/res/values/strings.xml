@@ -17,4 +17,5 @@
     <string name="PressedD">Pressed:- D</string>
     <string name="PressedE">Pressed:- E</string>
     <string name="PressedF">Pressed:- F</string>
+    <string name="FAB_Clicked"></string>
 </resources>
