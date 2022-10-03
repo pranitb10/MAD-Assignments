@@ -1,5 +1,6 @@
 package edu.northeastern.numad22faPranitBrahmbhatt;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -7,14 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ClickyClickyScreen extends AppCompatActivity implements  View.OnClickListener{
 
     private TextView onClickText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clicky_clicky_screen);
 
@@ -36,7 +36,7 @@ public class ClickyClickyScreen extends AppCompatActivity implements  View.OnCli
 
     }
 
-    @SuppressLint("ResourceType")
+    @SuppressLint({"ResourceType", "NonConstantResourceId"})
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

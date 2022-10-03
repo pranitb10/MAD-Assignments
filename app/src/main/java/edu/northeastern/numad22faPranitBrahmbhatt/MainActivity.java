@@ -1,51 +1,31 @@
 package edu.northeastern.numad22faPranitBrahmbhatt;
 
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.ActionBar;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button aboutMeButton = (Button)findViewById(R.id.about_me_button);
+        Button aboutMeButton = findViewById(R.id.about_me_button);
 
-        Button clickMeButton = (Button)findViewById(R.id.click_me_button);
+        Button clickMeButton = findViewById(R.id.click_me_button);
 
-        Button linkCollectorButton = (Button)findViewById(R.id.link_collector_button);
+        Button linkCollectorButton = findViewById(R.id.link_collector_button);
 
-        aboutMeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openAboutMeScreen();
-            }
-        });
+        aboutMeButton.setOnClickListener(view -> openAboutMeScreen());
 
-        clickMeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openClickyClickyScreen();
-            }
-        });
+        clickMeButton.setOnClickListener(view -> openClickyClickyScreen());
 
-        linkCollectorButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openLinkCollectorScreen();
-            }
-        });
+        linkCollectorButton.setOnClickListener(view -> openLinkCollectorScreen());
     }
 
     public void openClickyClickyScreen(){
