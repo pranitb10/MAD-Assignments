@@ -13,8 +13,6 @@ import android.widget.EditText;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class LinkCollectorScreen extends AppCompatActivity {
@@ -23,7 +21,7 @@ public class LinkCollectorScreen extends AppCompatActivity {
     RecyclerLinkAdapter linkAdapter;
     FloatingActionButton callAddLinkDialogButton;
     ArrayList<LinkModel> arrLink = new ArrayList<>();
-    URL linkUrl;
+    String linkUrl;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,12 +51,6 @@ public class LinkCollectorScreen extends AppCompatActivity {
                 if(!editLink.getText().toString().equals(""))
                 {
                     link = editLink.getText().toString();
-                    try {
-                        URL linkUrl = new URL(link);
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
-
                 } else{
                     Snackbar.make(LinkCollectorScreen.this, view1,
                             "Please add a Link", Snackbar.LENGTH_LONG).show();

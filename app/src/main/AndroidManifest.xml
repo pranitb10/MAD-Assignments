@@ -14,9 +14,12 @@
         android:theme="@style/Theme.NUMAD22Fa_PranitBrahmbhatt"
         tools:targetApi="31">
         <activity
+            android:name=".PrimeTimeScreen"
+            android:exported="false" />
+        <activity
             android:name=".LinkCollectorScreen"
-            android:exported="false"
-            android:configChanges="screenSize|orientation" />
+            android:configChanges="screenSize|orientation"
+            android:exported="false" />
         <activity
             android:name=".AboutMeScreen"
             android:exported="false" />

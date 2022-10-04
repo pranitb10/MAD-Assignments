@@ -34,6 +34,7 @@ public class RecyclerLinkAdapter extends RecyclerView.Adapter<RecyclerLinkAdapte
         LinkModel lmodel = arrLink.get(position);
         holder.lName.setText(lmodel.name);
         holder.links.setText(lmodel.link);
+
     }
 
     @Override
