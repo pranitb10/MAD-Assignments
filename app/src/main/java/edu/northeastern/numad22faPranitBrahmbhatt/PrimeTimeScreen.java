@@ -18,6 +18,7 @@ public class PrimeTimeScreen extends AppCompatActivity {
     boolean endThread = false, check = true;
     TextView onClickChangeLastPrimeText;
     TextView onClickChangeLastNumberText;
+    Thread findPrimeThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +31,8 @@ public class PrimeTimeScreen extends AppCompatActivity {
         onClickChangeLastPrimeText = findViewById(R.id.PrimeNumberDisplayed);
         onClickChangeLastNumberText = findViewById(R.id.LastNumberDisplayed);
 
-        Thread findPrimeThread = new Thread(
+        findPrimeThread = new Thread(
                 new Runnable() {
-
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void run() {
@@ -83,32 +83,29 @@ public class PrimeTimeScreen extends AppCompatActivity {
                     }
                 }
         );
+    }
 
-//        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
-//            @Override
-//            public void handleOnBackPressed() {
-//                AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
-//                alertdialog.setTitle("Alert!");
-//                alertdialog.setMessage("Are you sure you want to terminate the Prime search?");
-//                alertdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        finish();
-//                    }
-//                });
-//
-//                alertdialog.setNegativeButton("No", new DialogInterface.OnClickListener(){
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.cancel();
-//                    }
-//                });
-//
-//                AlertDialog alert=alertdialog.create();
-//                alertdialog.show();
-//
-//            }
-//        };
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alertdialog = new AlertDialog.Builder(PrimeTimeScreen.this);
+        alertdialog.setTitle("Alert!");
+        alertdialog.setMessage("Are you sure you want to terminate the Prime search?");
+        alertdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+                findPrimeThread.interrupt();
+            }
+        });
 
+        alertdialog.setNegativeButton("No", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog alert=alertdialog.create();
+        alertdialog.show();
     }
 }
