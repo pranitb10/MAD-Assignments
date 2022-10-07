@@ -20,5 +20,9 @@
     <string name="Add_Link">Add Link</string>
     <string name="Enter_Link_Name">Enter Link Name</string>
     <string name="Enter_Link">Enter Link</string>
-    <string name="Prime_Time">Prime Time</string>
+    <string name="Find_Primes">Find Primes</string>
+    <string name="Terminate_Search">Terminate Search</string>
+    <string name="Pacifier_Switch">Pacifier Switch</string>
+    <string name="Last_Prime_Searched">Last Prime Number Searched: </string>
+    <string name="Last_Number_In_The_Search_Loop">Last Number in the Search Loop: </string>
 </resources>
