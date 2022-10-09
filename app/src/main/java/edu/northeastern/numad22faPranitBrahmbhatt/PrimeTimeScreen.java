@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,12 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PrimeTimeScreen extends AppCompatActivity {
 
-    int i, j, prime = 3, lastNum, count = 0;
-    boolean endThread = true, check = true;
+    long i, j, prime = 3, lastNum;
+    boolean endThread = false, check = true;
     TextView onClickChangeLastPrimeText;
     TextView onClickChangeLastNumberText;
-    Thread findPrimeThread;
+    Thread findPrimeThread = null;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,56 +33,27 @@ public class PrimeTimeScreen extends AppCompatActivity {
         onClickChangeLastPrimeText = findViewById(R.id.PrimeNumberDisplayed);
         onClickChangeLastNumberText = findViewById(R.id.LastNumberDisplayed);
 
-        findPrimeThread = new Thread(
-                new Runnable() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void run() {
-                        while (endThread) {
-                            for (i = 3; i <= 10000; i = i + 2) {
-                                for (j = 2; j <= i / 2; j++) {
-                                    if (i % j == 0) {
-                                        check = false;
-                                        break;
-                                    }
-                                    lastNum = i;
-                                    check = true;
-                                }
-                                if (check) {
-                                    prime = i;
-                                }
-                            }
-                        }
-                    }
-                }
-        );
-
         findPrimesButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        findPrimeThread.start();
-                        System.out.println("Thread Started");
-                    }
+                view -> {
+                    findPrimeFunction();
+                    System.out.println("Thread Started");
                 }
         );
 
         terminateSearchButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onClick(View view) {
-                        endThread = false;
-                        System.out.println("Thread Terminated");
-                        System.out.println(prime);
-                        System.out.println(lastNum);
-                        onClickChangeLastPrimeText.setText(
-                                Integer.toString(prime)
-                        );
-                        onClickChangeLastNumberText.setText(
-                                Integer.toString(lastNum)
-                        );
-                    }
+                view -> {
+                    endThread = true;
+//                    if (findPrimeThread != null) {
+//                        findPrimeThread.interrupt();
+//                        findPrimeThread = null;
+//                    }
+                    onClickChangeLastPrimeText.setText(
+                            Long.toString(prime)
+                    );
+                    onClickChangeLastNumberText.setText(
+                            Long.toString(lastNum)
+                    );
+                    System.out.println("Thread Terminated");
                 }
         );
     }
@@ -111,5 +84,41 @@ public class PrimeTimeScreen extends AppCompatActivity {
         } else {
             finish();
         }
+    }
+
+    public void findPrimeFunction(){
+            findPrimeThread = new Thread(
+                    () -> {
+                            for (i = 3; ; i = i + 2) {
+                                if(endThread) {
+                                    return;
+                                }
+                                for (j = 2; j <= i / 2; j++) {
+                                    if (i % j == 0) {
+                                        check = false;
+                                        break;
+                                    }
+                                    lastNum = i;
+                                    check = true;
+                                }
+                                if (check) {
+                                    prime = i;
+                                }
+                                runOnUiThread(new Runnable() {
+                                    @SuppressLint("SetTextI18n")
+                                    @Override
+                                    public void run() {
+                                        onClickChangeLastPrimeText.setText(
+                                                Long.toString(prime)
+                                        );
+                                        onClickChangeLastNumberText.setText(
+                                                Long.toString(lastNum)
+                                        );
+                                    }
+                                });
+                            }
+                    }
+            );
+        findPrimeThread.start();
     }
 }
