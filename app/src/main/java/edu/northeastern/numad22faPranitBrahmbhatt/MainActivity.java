@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button primeTimeButton = findViewById(R.id.prime_time_button);
 
+        Button locationButton = findViewById(R.id.location_main_button);
+
         aboutMeButton.setOnClickListener(view -> openAboutMeScreen());
 
         clickMeButton.setOnClickListener(view -> openClickyClickyScreen());
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         linkCollectorButton.setOnClickListener(view -> openLinkCollectorScreen());
 
         primeTimeButton.setOnClickListener(view -> openPrimeTimeScreen());
+
+        locationButton.setOnClickListener(view -> openLocationActivityScreen());
     }
 
     public void openClickyClickyScreen(){
@@ -50,5 +54,10 @@ public class MainActivity extends AppCompatActivity {
     public void openPrimeTimeScreen(){
         Intent openPrimeTimeActivity = new Intent(this, PrimeTimeScreen.class);
         startActivity(openPrimeTimeActivity);
+    }
+
+    public void openLocationActivityScreen(){
+        Intent openlocationActivity = new Intent(this, LocationActivity.class);
+        startActivity(openlocationActivity);
     }
 }
