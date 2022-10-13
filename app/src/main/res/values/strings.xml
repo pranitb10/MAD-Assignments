@@ -26,4 +26,9 @@
     <string name="Last_Prime_Searched">Last Prime Number Searched: </string>
     <string name="Last_Number_In_The_Search_Loop">Last Number in the Search Loop: </string>
     <string name="Not_Available">Press the button to initiate search. </string>
+    <string name="Latitude">Latitude:</string>
+    <string name="Longitude">Longitude:</string>
+    <string name="Latitude_Value">0.0</string>
+    <string name="Longitude_Value">0.0</string>
+    <string name="Get_Location">Get Location</string>
 </resources>
