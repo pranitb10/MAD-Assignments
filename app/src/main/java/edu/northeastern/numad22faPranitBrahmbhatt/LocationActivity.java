@@ -42,9 +42,10 @@ import io.reactivex.rxjava3.schedulers.Timed;
 public class LocationActivity extends AppCompatActivity {
 
     TextView latValue, longValue, distanceTv;
+    boolean locationPermission = false;
     Location oldLoc, newLoc;
     double distance = 0;
-    Button resetButton;
+    Button getLocation, resetButton;
     FusedLocationProviderClient locationProviderClient;
     LocationManager locManager;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -57,46 +58,53 @@ public class LocationActivity extends AppCompatActivity {
         latValue = findViewById(R.id.LatitudeValue);
         longValue = findViewById(R.id.LongitudeValue);
         distanceTv = findViewById(R.id.DistanceValue);
+        getLocation = findViewById(R.id.GetLocation);
         resetButton = findViewById(R.id.resetDistanceButton);
 
         locationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
+        getLocation.setOnClickListener(view -> {
+            locationPermission = true;
+            openLocationPermission();
+        });
+
         resetButton.setOnClickListener(view -> {
             compositeDisposable.dispose();
             distanceTv.setText(String.valueOf(0.0));
         });
 
+        if(locationPermission) {
+            Observable.interval(10L, TimeUnit.SECONDS)
+                    .timeInterval().subscribeWith(
+                            new Observer<Timed<Long>>() {
+                                @Override
+                                public void onSubscribe(@io.reactivex.rxjava3.annotations.NonNull
+                                                                Disposable d) {
+                                    System.out.println("subscribe");
+                                    compositeDisposable.add(d);
+                                }
 
-        Observable.interval(10L, TimeUnit.SECONDS)
-                .timeInterval().subscribeWith(
-                        new Observer<Timed<Long>>() {
-                            @Override
-                            public void onSubscribe(@io.reactivex.rxjava3.annotations.NonNull
-                                                            Disposable d) {
-                                System.out.println("subscribe");
-                                compositeDisposable.add(d);
-                            }
+                                @Override
+                                public void onNext(@io.reactivex.rxjava3.annotations.NonNull Timed<Long>
+                                                           longTimed) {
+                                    System.out.println("next");
+                                    openLocationPermission();
+                                }
 
-                            @Override
-                            public void onNext(@io.reactivex.rxjava3.annotations.NonNull Timed<Long>
-                                                       longTimed) {
-                                System.out.println("next");
-                                openLocationPermission();
-                            }
+                                @Override
+                                public void onError(Throwable t) {
+                                    System.out.println("onError -> " + t.getMessage());
+                                }
 
-                            @Override
-                            public void onError(Throwable t) {
-                                System.out.println("onError -> " + t.getMessage());
+                                @Override
+                                public void onComplete() {
+                                    System.out.println("complete");
+                                }
                             }
-
-                            @Override
-                            public void onComplete() {
-                                System.out.println("complete");
-                            }
-                        }
-                );
+                    );
+        }
 
         LocationRequest mLocationRequest = LocationRequest.create();
         mLocationRequest.setInterval(60000);
