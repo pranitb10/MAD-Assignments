@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         primeTimeButton.setOnClickListener(view -> openPrimeTimeScreen());
 
         locationButton.setOnClickListener(view -> openLocationActivityScreen());
+
     }
 
     public void openClickyClickyScreen(){

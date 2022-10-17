@@ -11,8 +11,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="116dp"
         android:text="@string/Longitude"
+        android:textColor="#817E87"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="232dp"
+        android:text="@string/Distance"
         android:textColor="#817E87"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -24,28 +37,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:text="@string/Latitude"
         android:textColor="#817E87"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/LatitudeValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:background="#B39DDB"
         android:padding="10dp"
         android:text="@string/Latitude_Value"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/userLongitude"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/userLatitude"
+        app:layout_constraintVertical_bias="0.023"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -53,29 +70,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:background="#B39DDB"
         android:padding="10dp"
         android:text="@string/Longitude_Value"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/getLocationButton"
+        app:layout_constraintBottom_toTopOf="@+id/userDistance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userLongitude"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.163"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/getLocationButton"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/DistanceValue"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/Get_Location"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        android:layout_margin="24dp"
+        android:layout_marginStart="16dp"
+        android:background="#B39DDB"
+        android:padding="10dp"
+        android:text="@string/Distance_Value"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/userDistance"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/resetDistanceButton"
@@ -85,7 +103,6 @@
         android:text="@string/Reset_Distance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LongitudeValue"
         app:layout_constraintVertical_bias="1.0" />

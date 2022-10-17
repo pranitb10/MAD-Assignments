@@ -28,8 +28,10 @@
     <string name="Not_Available">Press the button to initiate search. </string>
     <string name="Latitude">Latitude:</string>
     <string name="Longitude">Longitude:</string>
+    <string name="Distance">Distance (in meters)</string>
     <string name="Latitude_Value">0.0</string>
     <string name="Longitude_Value">0.0</string>
     <string name="Get_Location">Get Location</string>
     <string name="Reset_Distance">Reset Distance</string>
+    <string name="Distance_Value">0.0</string>
 </resources>
