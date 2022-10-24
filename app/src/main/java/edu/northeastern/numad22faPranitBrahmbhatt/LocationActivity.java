@@ -55,6 +55,8 @@ public class LocationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
 
+        setTitle("Location and Distance Tracker");
+
         latValue = findViewById(R.id.LatitudeValue);
         longValue = findViewById(R.id.LongitudeValue);
         distanceTv = findViewById(R.id.DistanceValue);
