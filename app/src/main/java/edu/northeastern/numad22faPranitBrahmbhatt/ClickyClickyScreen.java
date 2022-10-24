@@ -18,6 +18,8 @@ public class ClickyClickyScreen extends AppCompatActivity implements  View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clicky_clicky_screen);
 
+        setTitle("Click Buttons to change numbers");
+
         onClickText = findViewById(R.id.Pressed);
 
         Button buttonA = findViewById(R.id.button1);

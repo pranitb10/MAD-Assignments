@@ -27,6 +27,8 @@ public class PrimeTimeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prime_time);
 
+        setTitle("Find Prime Numbers");
+
         Button findPrimesButton = findViewById(R.id.find_prime_button);
         Button terminateSearchButton = findViewById(R.id.terminate_search_button);
 

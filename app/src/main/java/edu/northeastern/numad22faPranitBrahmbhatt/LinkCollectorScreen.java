@@ -28,6 +28,8 @@ public class LinkCollectorScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link_collector_screen);
 
+        setTitle("Link Collector Notepad");
+
         linkRecyclerView = findViewById(R.id.linkRecycler);
         callAddLinkDialogButton = findViewById(R.id.fabAddLinkDialog);
 
