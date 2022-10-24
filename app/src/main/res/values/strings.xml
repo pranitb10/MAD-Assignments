@@ -2,6 +2,7 @@
     <string name="app_name">NUMAD22Fa_PranitBrahmbhatt</string>
     <string name="about_me">About Me</string>
     <string name="click_me">Clicky Clicky</string>
+    <string name="link_collector">Link Collector</string>
     <string name="my_info">Name: Pranit Brahmbhatt\nEmail: brahmbhatt.pr@northeastern.edu</string>
     <string name="A">A</string>
     <string name="B">B</string>
@@ -16,4 +17,21 @@
     <string name="PressedD">Pressed:- D</string>
     <string name="PressedE">Pressed:- E</string>
     <string name="PressedF">Pressed:- F</string>
+    <string name="Add_Link">Add Link</string>
+    <string name="Enter_Link_Name">Enter Link Name</string>
+    <string name="Enter_Link">Enter Link</string>
+    <string name="Find_Primes">Find Primes</string>
+    <string name="Terminate_Search">Terminate Search</string>
+    <string name="Pacifier_Switch">Pacifier Switch</string>
+    <string name="Last_Prime_Searched">Last Prime Number Searched: </string>
+    <string name="Last_Number_In_The_Search_Loop">Last Number in the Search Loop: </string>
+    <string name="Not_Available">Press the button to initiate search. </string>
+    <string name="Latitude">Latitude:</string>
+    <string name="Longitude">Longitude:</string>
+    <string name="Distance">Distance (in meters)</string>
+    <string name="Latitude_Value">0.0</string>
+    <string name="Longitude_Value">0.0</string>
+    <string name="Get_Location">Get Location</string>
+    <string name="Reset_Distance">Reset Distance</string>
+    <string name="Distance_Value">0.0</string>
 </resources>
